@@ -1,7 +1,5 @@
 <script lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
 import MainLayout from './components/MainLayout.vue'
-
 export default {
   components: {
     MainLayout
@@ -10,5 +8,5 @@ export default {
 </script>
 
 <template>
-  <MainLayout />
+  <router-view />
 </template>

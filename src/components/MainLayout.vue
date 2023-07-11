@@ -1,32 +1,36 @@
 <template>
   <div class="layout">
-    <div class="header" :style="{ gridArea: 'header' }">
-      <header>
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <MainNavbar />
 
-        <div class="wrapper">
-          <HelloWorld msg="You did it!" />
-
-          <nav>
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/about">About</RouterLink>
-          </nav>
-        </div>
-      </header>
-    </div>
     <div class="sidebar" :style="{ gridArea: 'sidebar' }">
-      <!-- Sidebar bileşeninizi buraya yerleştirin -->
+      <h1>Side Menu</h1>
+    </div>
+
+    <div class="content" :style="{ gridArea: 'content' }">
+      <slot name="content"></slot>
     </div>
     <div class="footer" :style="{ gridArea: 'footer', backgroundColor: 'aqua' }">
       <div>footer</div>
     </div>
-    <div class="content" :style="{ gridArea: 'content' }">
-      <router-view />
-    </div>
   </div>
 </template>
 
-<style scoped>
+<script lang="ts">
+import MainNavbar from './MainNavbar.vue'
+
+export default {
+  components: {
+    MainNavbar
+  },
+  data() {
+    return {
+      isLoggedIn: false
+    }
+  }
+}
+</script>
+
+<style>
 .layout {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -44,6 +48,9 @@
 .content {
   grid-area: content;
   /* Content stilini burada özelleştirin */
+}
+.sidebar {
+  background-color: grey;
 }
 header {
   display: flex;

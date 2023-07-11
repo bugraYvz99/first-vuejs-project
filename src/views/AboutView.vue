@@ -1,7 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <MainLayout>
+    <template #content>
+      <div class="about">
+        <h1>This is an about page</h1>
+      </div></template
+    >
+  </MainLayout>
 </template>
 
 <style>
@@ -13,3 +17,6 @@
   }
 }
 </style>
+<script setup lang="ts">
+import MainLayout from '@/components/MainLayout.vue'
+</script>
