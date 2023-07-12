@@ -1,5 +1,6 @@
 <template>
-  <div class="item">
+  <div  class="item"
+    :class="{ fav: isFav }" @click="handleToggleFav">
     <i>
       <slot name="icon"></slot>
     </i>
@@ -11,6 +12,21 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { defineProps, ref } from 'vue'
+
+const props = defineProps({
+  isFav: Boolean
+ 
+})
+const isFav = ref(props.isFav)
+
+
+const handleToggleFav = () => {
+  isFav.value = !isFav.value
+}
+</script>
 
 <style scoped>
 .item {
@@ -30,7 +46,6 @@ i {
   place-content: center;
   width: 32px;
   height: 32px;
-
   color: var(--color-text);
 }
 
@@ -39,6 +54,10 @@ h3 {
   font-weight: 500;
   margin-bottom: 0.4rem;
   color: var(--color-heading);
+}
+
+.item.fav {
+  background-color: pink;
 }
 
 @media (min-width: 1024px) {
