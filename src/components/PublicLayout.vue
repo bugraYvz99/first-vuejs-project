@@ -1,18 +1,14 @@
 <template>
   <div class="public">
-    <LoginView />
+
+  <slot name="public"></slot>
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import LoginView from '../views/LoginView.vue'
 
-export default {
-  components: {
-    LoginView
-  },
-  setup() {}
-}
+
 </script>
 
 <style scoped>

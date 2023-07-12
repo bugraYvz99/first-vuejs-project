@@ -41,8 +41,7 @@ const welcomeItems = [
 </script>
 
 <template>
-  <MainLayout>
-    <template #content>
+ <div>
       <WelcomeItem v-for="item in welcomeItems" :key="item.heading">
         <template #icon>
           <item.icon />
@@ -50,6 +49,5 @@ const welcomeItems = [
         <template #heading>{{ item.heading }}</template>
         <div v-html="item.content"></div>
       </WelcomeItem>
-    </template>
-  </MainLayout>
+    </div>
 </template>

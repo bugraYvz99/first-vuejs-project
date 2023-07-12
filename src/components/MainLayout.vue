@@ -15,19 +15,9 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import MainNavbar from './MainNavbar.vue'
 
-export default {
-  components: {
-    MainNavbar
-  },
-  data() {
-    return {
-      isLoggedIn: false
-    }
-  }
-}
 </script>
 
 <style>

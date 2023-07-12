@@ -17,10 +17,12 @@ const login = () => {
   isLoggedIn.value = true
 
   localStorage.setItem('isLoggedIn', 'true')
+  window.location.href="/"
 }
 const username = ref('')
 const password = ref('')
 console.log(username)
+
 </script>
 <style scoped>
 .login {
